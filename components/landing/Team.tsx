@@ -35,7 +35,7 @@ const Team: React.FC = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <div className="p-6 rounded-2xl bg-white hover:shadow-lg transition-all duration-300 text-center">
-                <div className="flex justify-center mb-4">
+                <div className="flex justify-center mb-3">
                   <Avatar
                     src={member.image}
                     alt={member.name}
@@ -45,8 +45,8 @@ const Team: React.FC = () => {
                   />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-1">{member.name}</h3>
-                <p className="text-sm text-gray-600 mb-3">{member.role}</p>
-                <p className="text-sm text-gray-500 mb-4 leading-relaxed">{member.bio}</p>
+                <p className="text-sm text-gray-600 mb-2">{member.role}</p>
+                <p className="text-sm text-gray-500 mb-3">{member.bio}</p>
                 {member.linkedin && (
                   <div className="flex items-center justify-center">
                     <a
