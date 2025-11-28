@@ -8,8 +8,8 @@ export function middleware(request: NextRequest) {
   const publicRoutes = ['/', '/login', '/signup', '/forgot-password']
   const isPublicRoute = publicRoutes.some((route) => request.nextUrl.pathname === route)
 
-  // Dashboard routes require authentication
-  // DISABLED FOR TESTING - Remove this comment and uncomment the redirect to enable auth
+  // Dashboard routes - AUTH DISABLED FOR TESTING
+  // All dashboard routes are now public and don't require authentication
   const isDashboardRoute = request.nextUrl.pathname.startsWith('/overview') ||
     request.nextUrl.pathname.startsWith('/dictionary') ||
     request.nextUrl.pathname.startsWith('/learning') ||
@@ -17,16 +17,21 @@ export function middleware(request: NextRequest) {
     request.nextUrl.pathname.startsWith('/settings') ||
     request.nextUrl.pathname.startsWith('/analytics')
 
-  // Auth check disabled for testing - uncomment below to enable
-  // if (isDashboardRoute && !token) {
-  //   return NextResponse.redirect(new URL('/login', request.url))
-  // }
+  // AUTH CHECK COMPLETELY DISABLED FOR TESTING
+  // Dashboard routes are accessible without authentication
+  // To re-enable auth, uncomment the following:
+  /*
+  if (isDashboardRoute && !token) {
+    return NextResponse.redirect(new URL('/login', request.url))
+  }
+  */
 
-  // Redirect authenticated users away from auth pages
+  // Redirect authenticated users away from auth pages (optional)
   if ((request.nextUrl.pathname === '/login' || request.nextUrl.pathname === '/signup') && token) {
     return NextResponse.redirect(new URL('/overview', request.url))
   }
 
+  // Allow all requests to proceed
   return NextResponse.next()
 }
 
