@@ -77,7 +77,7 @@ export const TEAM_MEMBERS = [
   },
   {
     id: 6,
-    name: 'Lisa Wang',
+    name: 'Victoria .',
     role: 'Community Manager',
     bio: 'Connecting with Deaf communities worldwide.',
     image: '/images/team/lisa.jpg',
