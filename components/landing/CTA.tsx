@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { ArrowRight, Mail } from 'lucide-react'
 import Button from '@/components/ui/Button'
 import Input from '@/components/ui/Input'
+import Link from 'next/link'
 
 const CTA: React.FC = () => {
   const [email, setEmail] = useState('')
@@ -22,24 +23,23 @@ const CTA: React.FC = () => {
   }
 
   return (
-    <section className="py-24 bg-gradient-to-r from-primary to-primary-dark">
+    <section className="py-32 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6 }}
-          className="max-w-3xl mx-auto text-center"
+          className="max-w-2xl mx-auto text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Join the Movement
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Ready to Get Started?
           </h2>
-          <p className="text-xl text-white/90 mb-8">
-            Be among the first to experience the future of visual communication.
-            Sign up for early access and exclusive updates.
+          <p className="text-lg text-gray-600 mb-8">
+            Join thousands learning visual communication.
           </p>
 
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-6">
             <div className="flex-1">
               <Input
                 type="email"
@@ -53,24 +53,21 @@ const CTA: React.FC = () => {
             </div>
             <Button
               type="submit"
-              variant="secondary"
+              variant="primary"
               size="lg"
               isLoading={isSubmitting}
-              className="whitespace-nowrap"
+              className="rounded-full whitespace-nowrap"
             >
               Get Early Access
-              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </form>
 
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Button variant="ghost" size="lg" className="text-white hover:bg-white/10">
-              Learn More
+          <Link href="/signup">
+            <Button variant="ghost" size="lg" className="rounded-full">
+              Or create an account
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button variant="ghost" size="lg" className="text-white hover:bg-white/10">
-              Contact Sales
-            </Button>
-          </div>
+          </Link>
         </motion.div>
       </div>
     </section>
@@ -78,4 +75,3 @@ const CTA: React.FC = () => {
 }
 
 export default CTA
-
