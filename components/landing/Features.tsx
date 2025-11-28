@@ -46,7 +46,7 @@ const features = [
 
 const Features: React.FC = () => {
   return (
-    <section id="features" className="py-32 bg-white">
+    <section id="features" className="relative py-32 bg-white z-10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

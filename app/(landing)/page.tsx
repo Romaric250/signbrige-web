@@ -6,7 +6,7 @@ import Footer from '@/components/landing/Footer'
 
 export default function HomePage() {
   return (
-    <main className="overflow-hidden">
+    <main>
       <Hero />
       <Features />
       <Team />

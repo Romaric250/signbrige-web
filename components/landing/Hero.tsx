@@ -2,13 +2,14 @@
 
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import Button from '@/components/ui/Button'
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-32">
+    <section className="relative min-h-screen flex items-center justify-center bg-white pt-32 pb-20 z-0">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Main Headline */}
@@ -53,19 +54,26 @@ const Hero: React.FC = () => {
             </Link>
           </motion.div>
 
-          {/* Simple Visual */}
+          {/* QR Code for App Download */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-20 max-w-2xl mx-auto"
+            className="mt-16 flex flex-col items-center"
           >
-            <div className="aspect-video bg-gray-50 rounded-xl border border-gray-200 flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                  <span className="text-5xl">👋</span>
-                </div>
-                <p className="text-sm text-gray-500">Sign Language Translation</p>
+            <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-lg">
+              <div className="text-center mb-4">
+                <p className="text-sm font-medium text-gray-900 mb-1">Download the App</p>
+                <p className="text-xs text-gray-500">Scan to download SignNova</p>
+              </div>
+              <div className="w-48 h-48 mx-auto bg-white rounded-lg p-4 border border-gray-100 relative">
+                <Image 
+                  src="https://g9kbtbs1bu.ufs.sh/f/woziFUfAWTFpQVraYWzGtjkfFV7Pw64WHpM3q9O5lxgJYKEh" 
+                  alt="QR Code to download SignNova app"
+                  fill
+                  className="object-contain"
+                  unoptimized
+                />
               </div>
             </div>
           </motion.div>

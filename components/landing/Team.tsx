@@ -8,7 +8,7 @@ import { TEAM_MEMBERS } from '@/lib/constants'
 
 const Team: React.FC = () => {
   return (
-    <section id="team" className="py-32 bg-gray-50">
+    <section id="team" className="relative py-32 bg-gray-50 z-10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

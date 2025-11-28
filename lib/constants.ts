@@ -27,8 +27,8 @@ export const DASHBOARD_NAV_ITEMS = [
 export const TEAM_MEMBERS = [
   {
     id: 1,
-    name: 'Alex Chen',
-    role: 'CEO & Co-Founder',
+    name: 'Tandangwe Horline',
+    role: 'Data Analyst',
     bio: 'Bridging communication gaps through technology.',
     image: '/images/team/alex.jpg',
     linkedin: 'https://linkedin.com/in/alexchen',
@@ -37,8 +37,8 @@ export const TEAM_MEMBERS = [
   },
   {
     id: 2,
-    name: 'Sarah Johnson',
-    role: 'CTO & Co-Founder',
+    name: 'Anthony .',
+    role: 'Coming Sooon',
     bio: 'AI/ML expert in computer vision and NLP.',
     image: '/images/team/sarah.jpg',
     linkedin: 'https://linkedin.com/in/sarahjohnson',
@@ -47,8 +47,8 @@ export const TEAM_MEMBERS = [
   },
   {
     id: 3,
-    name: 'Michael Torres',
-    role: 'Head of Product',
+    name: 'Romaric Lonfonyuy',
+    role: 'Head of Product and Lead Developer',
     bio: 'Accessibility-first designer and advocate.',
     image: '/images/team/michael.jpg',
     linkedin: 'https://linkedin.com/in/michaeltorres',
@@ -57,8 +57,8 @@ export const TEAM_MEMBERS = [
   },
   {
     id: 4,
-    name: 'Emily Rodriguez',
-    role: 'Lead Developer',
+    name: 'Seli Aveh',
+    role: 'Coming Soon',
     bio: 'Building inclusive technology solutions.',
     image: '/images/team/emily.jpg',
     linkedin: 'https://linkedin.com/in/emilyrodriguez',
@@ -67,7 +67,7 @@ export const TEAM_MEMBERS = [
   },
   {
     id: 5,
-    name: 'David Kim',
+    name: 'Jorime Clotilde',
     role: 'AI Research Lead',
     bio: 'ML researcher in gesture recognition.',
     image: '/images/team/david.jpg',
