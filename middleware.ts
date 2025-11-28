@@ -9,6 +9,7 @@ export function middleware(request: NextRequest) {
   const isPublicRoute = publicRoutes.some((route) => request.nextUrl.pathname === route)
 
   // Dashboard routes require authentication
+  // DISABLED FOR TESTING - Remove this comment and uncomment the redirect to enable auth
   const isDashboardRoute = request.nextUrl.pathname.startsWith('/overview') ||
     request.nextUrl.pathname.startsWith('/dictionary') ||
     request.nextUrl.pathname.startsWith('/learning') ||
@@ -16,9 +17,10 @@ export function middleware(request: NextRequest) {
     request.nextUrl.pathname.startsWith('/settings') ||
     request.nextUrl.pathname.startsWith('/analytics')
 
-  if (isDashboardRoute && !token) {
-    return NextResponse.redirect(new URL('/login', request.url))
-  }
+  // Auth check disabled for testing - uncomment below to enable
+  // if (isDashboardRoute && !token) {
+  //   return NextResponse.redirect(new URL('/login', request.url))
+  // }
 
   // Redirect authenticated users away from auth pages
   if ((request.nextUrl.pathname === '/login' || request.nextUrl.pathname === '/signup') && token) {

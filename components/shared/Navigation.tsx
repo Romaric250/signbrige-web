@@ -24,7 +24,7 @@ const Navigation: React.FC = () => {
   return (
     <nav
       className={cn(
-        'fixed top-8 left-1/2 -translate-x-1/2 z-50 transition-all duration-500',
+        'fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-500',
         isScrolled || !isLandingPage
           ? 'bg-white/95 backdrop-blur-2xl shadow-2xl border border-gray-100/50 rounded-full px-8'
           : 'bg-white/90 backdrop-blur-2xl shadow-xl border border-gray-100/50 rounded-full px-8'
