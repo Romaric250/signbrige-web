@@ -3,6 +3,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { Linkedin, Github, Twitter, Heart } from 'lucide-react'
+import { COMPANY } from '@/lib/constants'
 
 const Footer: React.FC = () => {
   return (
@@ -12,20 +13,20 @@ const Footer: React.FC = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
-              <div className="h-10 w-10 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-white font-bold text-xl">SN</span>
+              <div className="h-10 w-10 rounded-xl bg-primary flex items-center justify-center">
+                <span className="text-white font-bold text-xl">SB</span>
               </div>
-              <span className="text-2xl font-bold text-white">SignNova</span>
+              <span className="text-2xl font-bold text-white">{COMPANY.name}</span>
             </Link>
             <p className="text-gray-400 text-sm mb-4 max-w-md">
-              Revolutionizing visual communication and breaking down barriers between hearing and Deaf communities.
+              {COMPANY.tagline}
             </p>
             <div className="flex gap-3">
               <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all"
+                className="w-10 h-10 rounded-xl bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all duration-200"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
@@ -34,7 +35,7 @@ const Footer: React.FC = () => {
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all"
+                className="w-10 h-10 rounded-xl bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all duration-200"
                 aria-label="GitHub"
               >
                 <Github className="h-5 w-5" />
@@ -43,7 +44,7 @@ const Footer: React.FC = () => {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all"
+                className="w-10 h-10 rounded-xl bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all duration-200"
                 aria-label="Twitter"
               >
                 <Twitter className="h-5 w-5" />
@@ -61,8 +62,13 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#team" className="hover:text-primary transition-colors text-sm">
-                  Team
+                <Link href="#how-it-works" className="hover:text-primary transition-colors text-sm">
+                  How It Works
+                </Link>
+              </li>
+              <li>
+                <Link href="#impact" className="hover:text-primary transition-colors text-sm">
+                  Impact
                 </Link>
               </li>
               <li>
@@ -74,8 +80,18 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-4">Legal</h3>
+            <h3 className="text-white font-semibold mb-4">Company</h3>
             <ul className="space-y-2">
+              <li>
+                <Link href="#team" className="hover:text-primary transition-colors text-sm">
+                  Team
+                </Link>
+              </li>
+              <li>
+                <Link href="#problem" className="hover:text-primary transition-colors text-sm">
+                  The Challenge
+                </Link>
+              </li>
               <li>
                 <Link href="/privacy" className="hover:text-primary transition-colors text-sm">
                   Privacy
@@ -90,11 +106,11 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between">
+        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-400 text-sm text-center md:text-left">
-            © {new Date().getFullYear()} SignNova. All rights reserved.
+            © {new Date().getFullYear()} {COMPANY.name}. All rights reserved.
           </p>
-          <p className="text-gray-400 text-sm mt-4 md:mt-0 flex items-center gap-1">
+          <p className="text-gray-400 text-sm flex items-center gap-1">
             <Heart className="h-4 w-4 text-primary" />
             Built for Deaf and hearing communities
           </p>

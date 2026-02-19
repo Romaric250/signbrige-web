@@ -6,13 +6,13 @@ import { AuthProvider } from '@/contexts/AuthContext'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'SignNova - Learn Visual Communication',
-  description: 'Revolutionary sign language translation platform helping hearing individuals learn visual communication the way Deaf communities naturally do.',
-  keywords: ['sign language', 'ASL', 'translation', 'accessibility', 'Deaf community'],
-  authors: [{ name: 'SignNova Team' }],
+  title: 'Sign Bridge — Eliminating Communication Barriers',
+  description: 'Sign Bridge is a social-impact technology company focused on eliminating communication barriers between hearing and non-hearing individuals through accessible digital solutions. Powered by SignNova.',
+  keywords: ['sign language', 'accessibility', 'Deaf community', 'Ghana', 'assistive technology', 'real-time translation', 'inclusive communication'],
+  authors: [{ name: 'Sign Bridge' }],
   openGraph: {
-    title: 'SignNova - Learn Visual Communication',
-    description: 'AI-powered sign language translation platform',
+    title: 'Sign Bridge — Eliminating Communication Barriers',
+    description: 'Social-impact technology for inclusive communication between hearing and non-hearing individuals.',
     type: 'website',
   },
 }

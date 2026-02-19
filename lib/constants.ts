@@ -1,5 +1,20 @@
 export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api'
 
+// Web app (SignNova) - runs on subdomain e.g. app.signbridge.com
+export const WEB_APP_URL = process.env.NEXT_PUBLIC_WEB_APP_URL || 'https://app.signbridge.com'
+
+export const COMPANY = {
+  name: 'Sign Bridge',
+  tagline: 'Eliminating communication barriers between hearing and non-hearing individuals.',
+  product: 'SignNova',
+  productDescription: 'Real-time sign language translation for inclusive communication.',
+} as const
+
+// Hero background - use a local path (/images/hero-bg.jpg) or external URL
+export const HERO_BACKGROUND_IMAGE =
+  process.env.NEXT_PUBLIC_HERO_BG_IMAGE ||
+  'https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1920&q=80'
+
 export const SIGN_LANGUAGES = [
   { value: 'asl', label: 'American Sign Language (ASL)' },
   { value: 'bsl', label: 'British Sign Language (BSL)' },
@@ -10,10 +25,11 @@ export const SIGN_LANGUAGES = [
 
 export const NAVIGATION_ITEMS = [
   { href: '/', label: 'Home' },
+  { href: '#problem', label: 'The Challenge' },
   { href: '#features', label: 'Features' },
   { href: '#how-it-works', label: 'How It Works' },
-  { href: '#team', label: 'Team' },
   { href: '#impact', label: 'Impact' },
+  { href: '#team', label: 'Team' },
 ] as const
 
 export const DASHBOARD_NAV_ITEMS = [
@@ -38,7 +54,7 @@ export const TEAM_MEMBERS = [
   {
     id: 2,
     name: 'Anthony .',
-    role: 'Coming Sooon',
+    role: 'Coming Soon',
     bio: 'AI/ML expert in computer vision and NLP.',
     image: '/images/team/sarah.jpg',
     linkedin: 'https://linkedin.com/in/sarahjohnson',
