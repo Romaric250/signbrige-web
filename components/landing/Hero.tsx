@@ -17,7 +17,7 @@ const signLabels = ['Hello', 'Good', 'Help', 'Yes', 'Thank you']
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-32 pb-24 z-0">
+    <section className="relative min-h-screen flex items-center overflow-hidden pt-28 sm:pt-32 pb-16 sm:pb-24 z-0">
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
@@ -30,12 +30,12 @@ const Hero: React.FC = () => {
           quality={90}
         />
       </div>
-      {/* Dark overlay - solid feel like reference */}
-      <div className="absolute inset-0 bg-[#0b1a23]/90" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0b1a23] via-[#0b1a23]/95 to-transparent" />
+      {/* Dark overlay - subtle, lets image show through */}
+      <div className="absolute inset-0 bg-[#0b1a23]/75" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0b1a23]/90 via-[#0b1a23]/70 to-transparent" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-16 items-center">
           {/* Left: Main content - aligns with logo */}
           <div className="lg:col-span-7">
             {/* Badge */}
@@ -95,7 +95,7 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-              className="flex flex-wrap gap-8 sm:gap-12 mb-10"
+              className="flex flex-wrap gap-6 sm:gap-8 md:gap-12 mb-10"
             >
               <div>
                 <div className="text-2xl sm:text-3xl font-bold text-white">470K+</div>
@@ -144,12 +144,12 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Right: Interactive visual - circular graphic + LIVE TRANSLATION */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+          <div className="lg:col-span-5 flex justify-center lg:justify-end items-end">
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="relative w-full max-w-md aspect-square"
+              className="relative w-full max-w-[320px] sm:max-w-[400px] md:max-w-[450px] lg:max-w-[520px] aspect-square mx-auto lg:mx-0"
             >
               {/* Concentric rings + hand center */}
               <div className="relative w-full h-full flex items-center justify-center">
@@ -176,7 +176,7 @@ const Hero: React.FC = () => {
                     return (
                       <div
                         key={i}
-                        className="absolute w-2 h-2 rounded-full bg-primary/60"
+                        className="absolute w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-primary/60"
                         style={{
                           left: `${x}%`,
                           top: `${y}%`,
@@ -187,8 +187,8 @@ const Hero: React.FC = () => {
                   })}
                 </div>
                 {/* Hand icon center */}
-                <div className="relative z-10 w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/5 border-2 border-primary/40 flex items-center justify-center">
-                  <Hand className="h-8 w-8 sm:h-10 sm:w-10 text-white" strokeWidth={1.5} />
+                <div className="relative z-10 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 rounded-full bg-white/5 border-2 border-primary/40 flex items-center justify-center">
+                  <Hand className="h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14 text-white" strokeWidth={1.5} />
                 </div>
                 {/* Floating sign labels */}
                 {signLabels.map((label, i) => {
@@ -206,7 +206,7 @@ const Hero: React.FC = () => {
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 0.4 + i * 0.1 }}
-                      className="absolute px-3 py-1.5 rounded-lg bg-white/5 border border-primary/40 text-white text-sm font-medium backdrop-blur-sm"
+                      className="absolute px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg bg-white/5 border border-primary/40 text-white text-sm sm:text-base font-medium backdrop-blur-sm"
                       style={pos}
                     >
                       {label}
@@ -220,16 +220,16 @@ const Hero: React.FC = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
-                className="absolute bottom-0 right-0 lg:right-4 w-full max-w-[280px] rounded-xl bg-slate-900/90 backdrop-blur-xl border border-white/10 overflow-hidden shadow-2xl"
+                className="absolute -bottom-2 right-0 sm:right-4 lg:right-0 w-full min-w-[260px] max-w-[320px] sm:min-w-[300px] sm:max-w-[360px] rounded-xl bg-slate-900/95 backdrop-blur-xl border border-white/10 overflow-hidden shadow-2xl"
               >
-                <div className="px-4 py-2 bg-primary/20 border-b border-white/10">
-                  <span className="text-xs font-bold text-primary tracking-wider">LIVE TRANSLATION</span>
+                <div className="px-5 py-3 bg-primary/20 border-b border-white/10">
+                  <span className="text-xs sm:text-sm font-bold text-primary tracking-wider">LIVE TRANSLATION</span>
                 </div>
-                <div className="p-4 space-y-3">
-                  <p className="text-white text-sm">Good morning, how are you?</p>
+                <div className="p-5 space-y-3">
+                  <p className="text-white text-sm sm:text-base">Good morning, how are you?</p>
                   <div className="flex items-center gap-2">
-                    <span className="text-xs text-gray-400">Translating to</span>
-                    <span className="text-xs font-medium text-primary">ASL</span>
+                    <span className="text-xs sm:text-sm text-gray-400">Translating to</span>
+                    <span className="text-xs sm:text-sm font-medium text-primary">GSL</span>
                   </div>
                 </div>
               </motion.div>

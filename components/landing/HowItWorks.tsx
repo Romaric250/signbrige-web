@@ -58,7 +58,7 @@ const HowItWorks: React.FC = () => {
           {/* Connection line (desktop) */}
           <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {steps.map((step, index) => {
               const Icon = step.icon
               return (
@@ -70,7 +70,7 @@ const HowItWorks: React.FC = () => {
                   transition={{ duration: 0.5, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
                   className="relative"
                 >
-                  <div className="relative rounded-2xl bg-white p-8 border border-gray-100 shadow-sm hover:shadow-lg hover:border-primary/20 transition-all duration-300 h-full">
+                    <div className="relative rounded-2xl bg-white p-6 sm:p-8 border border-gray-100 shadow-sm hover:shadow-lg hover:border-primary/20 transition-all duration-300 h-full min-w-0">
                     <div className="relative inline-flex items-center justify-center mb-6">
                       <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl" />
                       <div className="relative w-16 h-16 rounded-2xl bg-primary flex items-center justify-center">

@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { COMPANY } from '@/lib/constants'
+import { COMPANY, WEB_APP_URL } from '@/lib/constants'
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -62,12 +62,14 @@ const Navigation: React.FC = () => {
                 {link.label}
               </a>
             ))}
-            <Link
-              href="/login"
+            <a
+              href={WEB_APP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="whitespace-nowrap ml-2 px-5 py-2.5 rounded-lg text-sm font-medium text-white bg-primary hover:bg-primary-dark transition-colors duration-200"
             >
-              Sign In
-            </Link>
+              Get Started
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -95,13 +97,15 @@ const Navigation: React.FC = () => {
                 {link.label}
               </a>
             ))}
-            <Link
-              href="/login"
+            <a
+              href={WEB_APP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setIsMobileMenuOpen(false)}
               className="block py-3 px-4 rounded-lg bg-primary text-white font-medium text-center mt-2"
             >
-              Sign In
-            </Link>
+              Get Started
+            </a>
           </div>
         </div>
       )}

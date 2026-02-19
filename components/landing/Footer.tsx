@@ -3,15 +3,15 @@
 import React from 'react'
 import Link from 'next/link'
 import { Linkedin, Github, Twitter, Heart } from 'lucide-react'
-import { COMPANY } from '@/lib/constants'
+import { COMPANY, WEB_APP_URL } from '@/lib/constants'
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-900 text-gray-300 py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-12">
           {/* Brand */}
-          <div className="md:col-span-2">
+          <div className="sm:col-span-2">
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
               <div className="h-10 w-10 rounded-xl bg-primary flex items-center justify-center">
                 <span className="text-white font-bold text-xl">SB</span>
@@ -72,9 +72,9 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/login" className="hover:text-primary transition-colors text-sm">
-                  Sign In
-                </Link>
+                <a href={WEB_APP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors text-sm">
+                  Get Started
+                </a>
               </li>
             </ul>
           </div>
