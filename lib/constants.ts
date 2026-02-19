@@ -10,11 +10,6 @@ export const COMPANY = {
   productDescription: 'Real-time sign language translation for inclusive communication.',
 } as const
 
-// Hero background - use a local path (/images/hero-bg.jpg) or external URL
-export const HERO_BACKGROUND_IMAGE =
-  process.env.NEXT_PUBLIC_HERO_BG_IMAGE ||
-  'https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1920&q=80'
-
 export const SIGN_LANGUAGES = [
   { value: 'asl', label: 'American Sign Language (ASL)' },
   { value: 'bsl', label: 'British Sign Language (BSL)' },

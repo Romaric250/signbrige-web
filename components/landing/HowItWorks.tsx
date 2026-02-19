@@ -43,6 +43,9 @@ const HowItWorks: React.FC = () => {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-16"
         >
+          <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-3">
+            The Process
+          </p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             How <span className="text-primary">{COMPANY.product}</span> Works
           </h2>

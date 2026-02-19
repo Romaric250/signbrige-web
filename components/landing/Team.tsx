@@ -9,8 +9,12 @@ import { COMPANY } from '@/lib/constants'
 
 const Team: React.FC = () => {
   return (
-    <section id="team" className="relative py-24 md:py-32 bg-gray-50 z-10">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="team" className="relative py-24 md:py-32 bg-white overflow-hidden">
+      {/* Background accent */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/5 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-primary/5 blur-3xl -translate-x-1/2 translate-y-1/2" />
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -18,48 +22,55 @@ const Team: React.FC = () => {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-16"
         >
+          <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-3">
+            The People
+          </p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Our Team
+            Meet the team behind {COMPANY.name}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            The minds behind {COMPANY.name}.
+            A diverse group of innovators united by a shared mission to eliminate communication barriers.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        {/* Bento-style grid - creative staggered layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {TEAM_MEMBERS.map((member, index) => (
             <motion.div
               key={member.id}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.5, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: true, margin: '-30px' }}
+              transition={{ duration: 0.5, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
+              className="group"
             >
-              <div className="p-6 rounded-2xl bg-white hover:shadow-lg transition-all duration-300 text-center border border-gray-100">
-                <div className="flex justify-center mb-3">
-                  <Avatar
-                    alt={member.name}
-                    size="xl"
-                    fallback={member.name}
-                    className="border-2 border-gray-100"
-                  />
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-1">{member.name}</h3>
-                <p className="text-sm text-gray-600 mb-2">{member.role}</p>
-                <p className="text-sm text-gray-500 mb-3">{member.bio}</p>
-                {member.linkedin && (
-                  <div className="flex items-center justify-center">
+              <div className="relative h-full p-6 rounded-2xl bg-gray-50/80 border border-gray-100 hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 overflow-hidden">
+                {/* Accent line on hover */}
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-primary-light opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="flex flex-col items-center text-center">
+                  <div className="mb-4">
+                    <Avatar
+                      alt={member.name}
+                      size="xl"
+                      fallback={member.name}
+                      className="border-2 border-white shadow-md ring-2 ring-primary/10"
+                    />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">{member.name}</h3>
+                  <p className="text-sm font-medium text-primary mb-2">{member.role}</p>
+                  <p className="text-sm text-gray-600 mb-4 leading-relaxed max-w-xs">{member.bio}</p>
+                  {member.linkedin && (
                     <a
                       href={member.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-9 h-9 rounded-xl bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all duration-200"
+                      className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-gray-200/80 text-gray-600 hover:bg-primary hover:text-white transition-all duration-200"
                       aria-label={`${member.name}'s LinkedIn`}
                     >
                       <Linkedin className="h-4 w-4" />
                     </a>
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}

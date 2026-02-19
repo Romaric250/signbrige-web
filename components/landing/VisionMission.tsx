@@ -8,6 +8,16 @@ const VisionMission: React.FC = () => {
   return (
     <section className="relative py-24 md:py-32 bg-white z-10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-3">
+            Who We Are
+          </p>
+        </motion.div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 max-w-5xl mx-auto">
           {/* Vision */}
           <motion.div

@@ -89,7 +89,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link href="#problem" className="hover:text-primary transition-colors text-sm">
-                  The Challenge
+                  Challenge
                 </Link>
               </li>
               <li>
