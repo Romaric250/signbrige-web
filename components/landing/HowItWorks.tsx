@@ -3,6 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Mic, Brain, User, BookOpen } from 'lucide-react'
+import { cn } from '@/lib/utils'
 import { COMPANY } from '@/lib/constants'
 
 const steps = [
@@ -70,7 +71,12 @@ const HowItWorks: React.FC = () => {
                   transition={{ duration: 0.5, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
                   className="relative"
                 >
-                    <div className="relative rounded-2xl bg-white p-6 sm:p-8 border border-gray-100 shadow-sm hover:shadow-lg hover:border-primary/20 transition-all duration-300 h-full min-w-0">
+                    <div className={cn(
+                      "relative rounded-2xl p-6 sm:p-8 border shadow-sm hover:shadow-lg transition-all duration-300 h-full min-w-0",
+                      index % 2 === 0
+                        ? "bg-gray-900 border-gray-800 hover:border-primary/30"
+                        : "bg-white border-gray-100 hover:border-primary/20"
+                    )}>
                     <div className="relative inline-flex items-center justify-center mb-6">
                       <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl" />
                       <div className="relative w-16 h-16 rounded-2xl bg-primary flex items-center justify-center">
@@ -80,8 +86,14 @@ const HowItWorks: React.FC = () => {
                         <span className="text-xs font-bold text-primary">{step.number}</span>
                       </div>
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">{step.title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
+                    <h3 className={cn(
+                      "text-lg font-bold mb-2",
+                      index % 2 === 0 ? "text-white" : "text-gray-900"
+                    )}>{step.title}</h3>
+                    <p className={cn(
+                      "text-sm leading-relaxed",
+                      index % 2 === 0 ? "text-gray-400" : "text-gray-600"
+                    )}>{step.description}</p>
                   </div>
                 </motion.div>
               )

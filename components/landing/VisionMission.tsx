@@ -25,15 +25,15 @@ const VisionMission: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="relative rounded-3xl bg-gradient-to-br from-primary/10 to-primary/5 p-6 sm:p-8 md:p-10 border border-primary/20 min-w-0"
+            className="relative rounded-3xl bg-gray-900 p-6 sm:p-8 md:p-10 border border-gray-800 min-w-0"
           >
             <div className="absolute top-6 right-6 sm:top-8 sm:right-8 w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-primary/20 flex items-center justify-center">
               <Eye className="h-8 w-8 text-primary" />
             </div>
-            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">
               Our Vision
             </h3>
-            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+            <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
               To build a society where communication barriers no longer limit access to education, healthcare, employment, or social participation — enabling hearing and non-hearing individuals to interact with dignity, equality, and mutual understanding.
             </p>
           </motion.div>
@@ -44,7 +44,7 @@ const VisionMission: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="relative rounded-3xl bg-gradient-to-br from-gray-50 to-white p-6 sm:p-8 md:p-10 border border-gray-100 shadow-sm min-w-0"
+            className="relative rounded-3xl bg-white p-6 sm:p-8 md:p-10 border border-gray-100 shadow-sm min-w-0"
           >
             <div className="absolute top-6 right-6 sm:top-8 sm:right-8 w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
               <Target className="h-8 w-8 text-primary" />

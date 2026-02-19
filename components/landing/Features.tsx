@@ -8,6 +8,7 @@ import {
   GraduationCap,
   BookOpen,
 } from 'lucide-react'
+import { cn } from '@/lib/utils'
 import { COMPANY } from '@/lib/constants'
 
 const features = [
@@ -65,13 +66,27 @@ const Features: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.5, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                className="group p-6 sm:p-8 rounded-2xl bg-gray-50 hover:bg-white border border-gray-100 hover:border-primary/20 hover:shadow-xl transition-all duration-300"
+                className={cn(
+                  "group p-6 sm:p-8 rounded-2xl border hover:shadow-xl transition-all duration-300",
+                  index % 2 === 0
+                    ? "bg-gray-900 border-gray-800 hover:border-primary/30"
+                    : "bg-gray-50 border-gray-100 hover:border-primary/20 hover:bg-white"
+                )}
               >
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300">
+                <div className={cn(
+                  "w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300",
+                  index % 2 === 0 ? "bg-primary/20" : "bg-primary/10"
+                )}>
                   <Icon className="h-7 w-7 text-primary" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
-                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{feature.description}</p>
+                <h3 className={cn(
+                  "text-lg sm:text-xl font-semibold mb-3",
+                  index % 2 === 0 ? "text-white" : "text-gray-900"
+                )}>{feature.title}</h3>
+                <p className={cn(
+                  "text-sm sm:text-base leading-relaxed",
+                  index % 2 === 0 ? "text-gray-400" : "text-gray-600"
+                )}>{feature.description}</p>
               </motion.div>
             )
           })}

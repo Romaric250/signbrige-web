@@ -3,6 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { GraduationCap, Heart, Briefcase, Users } from 'lucide-react'
+import { cn } from '@/lib/utils'
 
 const stats = [
   { value: '470,000+', label: 'People with hearing loss in Ghana' },
@@ -65,10 +66,13 @@ const Problem: React.FC = () => {
           {stats.map((stat, i) => (
             <div
               key={stat.label}
-              className="rounded-2xl bg-white p-8 shadow-sm border border-gray-100 text-center"
+              className={cn(
+                "rounded-2xl p-8 shadow-sm border text-center",
+                i % 2 === 0 ? "bg-gray-900 border-gray-800" : "bg-white border-gray-100"
+              )}
             >
               <div className="text-3xl md:text-4xl font-bold text-primary mb-1">{stat.value}</div>
-              <div className="text-gray-600 text-sm font-medium">{stat.label}</div>
+              <div className={cn("text-sm font-medium", i % 2 === 0 ? "text-gray-400" : "text-gray-600")}>{stat.label}</div>
             </div>
           ))}
         </motion.div>
@@ -84,13 +88,27 @@ const Problem: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.5, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                className="rounded-2xl bg-white p-5 sm:p-6 border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300 min-w-0"
+                className={cn(
+                  "rounded-2xl p-5 sm:p-6 border hover:shadow-lg transition-all duration-300 min-w-0",
+                  index % 2 === 0
+                    ? "bg-gray-900 border-gray-800 hover:border-primary/30"
+                    : "bg-white border-gray-100 hover:border-primary/20"
+                )}
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                <div className={cn(
+                  "w-12 h-12 rounded-xl flex items-center justify-center mb-4",
+                  index % 2 === 0 ? "bg-primary/20" : "bg-primary/10"
+                )}>
                   <Icon className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{area.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{area.description}</p>
+                <h3 className={cn(
+                  "text-lg font-semibold mb-2",
+                  index % 2 === 0 ? "text-white" : "text-gray-900"
+                )}>{area.title}</h3>
+                <p className={cn(
+                  "text-sm leading-relaxed",
+                  index % 2 === 0 ? "text-gray-400" : "text-gray-600"
+                )}>{area.description}</p>
               </motion.div>
             )
           })}

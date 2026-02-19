@@ -1,4 +1,6 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { User } from 'lucide-react'
@@ -12,6 +14,9 @@ interface AvatarProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
   ({ className, src, alt = 'Avatar', size = 'md', fallback, ...props }, ref) => {
+    const [imgError, setImgError] = useState(false)
+    const isExternal = src?.startsWith('http://') || src?.startsWith('https://')
+
     const sizes = {
       sm: 'h-8 w-8 text-xs',
       md: 'h-10 w-10 text-sm',
@@ -28,6 +33,8 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
         .slice(0, 2)
     }
 
+    const showFallback = !src || imgError
+
     return (
       <div
         ref={ref}
@@ -38,8 +45,24 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
         )}
         {...props}
       >
-        {src ? (
-          <Image src={src} alt={alt} fill className="object-cover" unoptimized />
+        {src && !showFallback ? (
+          isExternal ? (
+            <img
+              src={src}
+              alt={alt}
+              className="absolute inset-0 w-full h-full object-cover"
+              onError={() => setImgError(true)}
+            />
+          ) : (
+            <Image
+              src={src}
+              alt={alt}
+              fill
+              className="object-cover"
+              unoptimized
+              onError={() => setImgError(true)}
+            />
+          )
         ) : fallback ? (
           <span>{getInitials(fallback)}</span>
         ) : (
