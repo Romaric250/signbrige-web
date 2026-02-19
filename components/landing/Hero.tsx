@@ -3,7 +3,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { ArrowRight, Mic, Users, Globe, Hand, Zap, Heart } from 'lucide-react'
+import { ArrowRight, Mic, Users, Globe, Hand, Zap } from 'lucide-react'
 import Button from '@/components/ui/Button'
 import { COMPANY, WEB_APP_URL, HERO_BACKGROUND_IMAGE } from '@/lib/constants'
 
@@ -13,11 +13,7 @@ const highlights = [
   { icon: Globe, text: 'Multi-language support' },
 ]
 
-const valueProps = [
-  { icon: Hand, title: 'No interpreter needed', desc: 'Communicate directly, anytime.' },
-  { icon: Zap, title: 'Instant translation', desc: 'Speech to sign in real time.' },
-  { icon: Heart, title: 'Built for inclusion', desc: 'Education, healthcare, work.' },
-]
+const signLabels = ['Hello', 'Good', 'Help', 'Yes', 'Thank you']
 
 const Hero: React.FC = () => {
   return (
@@ -34,13 +30,13 @@ const Hero: React.FC = () => {
           quality={90}
         />
       </div>
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/75 via-slate-900/65 to-slate-900/80" />
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-900/60 via-slate-900/40 to-transparent" />
+      {/* Dark overlay - solid feel like reference */}
+      <div className="absolute inset-0 bg-[#0b1a23]/90" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0b1a23] via-[#0b1a23]/95 to-transparent" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Left: Main content - aligns with logo via same container */}
+          {/* Left: Main content - aligns with logo */}
           <div className="lg:col-span-7">
             {/* Badge */}
             <motion.div
@@ -53,26 +49,27 @@ const Hero: React.FC = () => {
               Social-Impact Technology
             </motion.div>
 
-            {/* Headline */}
+            {/* Headline - "Breaking barriers" style */}
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold text-white mb-6 leading-[1.08] tracking-tight"
             >
-              Bridging the
+              Breaking barriers
               <br />
-              <span className="text-primary">Communication Gap</span>
+              <span className="text-gray-400 font-semibold">in </span>
+              <span className="text-primary">communication</span>
             </motion.h1>
 
-            {/* Subheadline */}
+            {/* Subheadline - with AI-powered */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
               className="text-lg sm:text-xl text-gray-300 mb-8 max-w-xl leading-relaxed"
             >
-              {COMPANY.tagline}
+              Eliminating communication barriers between hearing and non-hearing individuals through AI-powered real-time sign language translation.
             </motion.p>
 
             {/* Highlights */}
@@ -93,12 +90,12 @@ const Hero: React.FC = () => {
               })}
             </motion.div>
 
-            {/* Stats */}
+            {/* Stats - 3 stats including translation latency */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-              className="flex gap-8 sm:gap-12 mb-10"
+              className="flex flex-wrap gap-8 sm:gap-12 mb-10"
             >
               <div>
                 <div className="text-2xl sm:text-3xl font-bold text-white">470K+</div>
@@ -108,9 +105,13 @@ const Hero: React.FC = () => {
                 <div className="text-2xl sm:text-3xl font-bold text-white">1 in 67</div>
                 <div className="text-sm text-gray-400">Experience hearing impairment</div>
               </div>
+              <div>
+                <div className="text-2xl sm:text-3xl font-bold text-white">&lt;1s</div>
+                <div className="text-sm text-gray-400">Translation latency</div>
+              </div>
             </motion.div>
 
-            {/* CTA */}
+            {/* CTA - Zap icon on Explore Features */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -123,10 +124,12 @@ const Hero: React.FC = () => {
                   <ArrowRight className="ml-2 h-5 w-5 inline-block group-hover:translate-x-1 transition-transform" />
                 </Button>
               </a>
-              <a href="#features">
-                <Button variant="ghost" size="lg" className="rounded-full px-10 text-white border-white/30 hover:bg-white/10 hover:border-white/50">
-                  Explore Features
-                </Button>
+              <a
+                href="#features"
+                className="inline-flex items-center gap-2 text-white hover:text-primary transition-colors font-medium"
+              >
+                <Zap className="h-5 w-5 text-primary" />
+                Explore Features
               </a>
             </motion.div>
 
@@ -134,45 +137,102 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="mt-8 text-sm text-gray-400"
+              className="mt-8 text-sm text-gray-500"
             >
-              Powered by <span className="font-semibold text-gray-300">{COMPANY.product}</span>
+              Powered by <span className="font-semibold text-gray-400">{COMPANY.product}</span>
             </motion.p>
           </div>
 
-          {/* Right: Creative content - uses the space */}
+          {/* Right: Interactive visual - circular graphic + LIVE TRANSLATION */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="w-full max-w-sm"
+              className="relative w-full max-w-md aspect-square"
             >
-              <div className="rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 p-6 sm:p-8 shadow-2xl">
-                <h3 className="text-lg font-bold text-white mb-1">Why Sign Bridge?</h3>
-                <p className="text-sm text-gray-400 mb-6">Making every conversation accessible.</p>
-                <div className="space-y-4">
-                  {valueProps.map((item, i) => {
-                    const Icon = item.icon
+              {/* Concentric rings + hand center */}
+              <div className="relative w-full h-full flex items-center justify-center">
+                {/* Rings */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <div
+                      key={i}
+                      className="absolute rounded-full border border-primary/30"
+                      style={{
+                        width: `${i * 18}%`,
+                        height: `${i * 18}%`,
+                      }}
+                    />
+                  ))}
+                </div>
+                {/* Dots */}
+                <div className="absolute inset-0">
+                  {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((i) => {
+                    const angle = (i / 12) * Math.PI * 2
+                    const r = 38
+                    const x = 50 + Math.cos(angle) * r
+                    const y = 50 + Math.sin(angle) * r
                     return (
-                      <div key={i} className="flex gap-4">
-                        <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center">
-                          <Icon className="h-5 w-5 text-primary" />
-                        </div>
-                        <div>
-                          <div className="font-semibold text-white text-sm">{item.title}</div>
-                          <div className="text-gray-400 text-sm">{item.desc}</div>
-                        </div>
-                      </div>
+                      <div
+                        key={i}
+                        className="absolute w-2 h-2 rounded-full bg-primary/60"
+                        style={{
+                          left: `${x}%`,
+                          top: `${y}%`,
+                          transform: 'translate(-50%, -50%)',
+                        }}
+                      />
                     )
                   })}
                 </div>
-                <div className="mt-6 pt-6 border-t border-white/10">
-                  <p className="text-xs text-gray-500">
-                    Real-time translation for classrooms, healthcare, and everyday conversations.
-                  </p>
+                {/* Hand icon center */}
+                <div className="relative z-10 w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/5 border-2 border-primary/40 flex items-center justify-center">
+                  <Hand className="h-8 w-8 sm:h-10 sm:w-10 text-white" strokeWidth={1.5} />
                 </div>
+                {/* Floating sign labels */}
+                {signLabels.map((label, i) => {
+                  const positions = [
+                    { top: '12%', left: '50%', transform: 'translateX(-50%)' },
+                    { top: '28%', right: '8%' },
+                    { bottom: '38%', left: '2%' },
+                    { bottom: '28%', right: '8%' },
+                    { top: '55%', left: '2%' },
+                  ]
+                  const pos = positions[i] ?? positions[0]
+                  return (
+                    <motion.div
+                      key={label}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.4 + i * 0.1 }}
+                      className="absolute px-3 py-1.5 rounded-lg bg-white/5 border border-primary/40 text-white text-sm font-medium backdrop-blur-sm"
+                      style={pos}
+                    >
+                      {label}
+                    </motion.div>
+                  )
+                })}
               </div>
+
+              {/* LIVE TRANSLATION box */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                className="absolute bottom-0 right-0 lg:right-4 w-full max-w-[280px] rounded-xl bg-slate-900/90 backdrop-blur-xl border border-white/10 overflow-hidden shadow-2xl"
+              >
+                <div className="px-4 py-2 bg-primary/20 border-b border-white/10">
+                  <span className="text-xs font-bold text-primary tracking-wider">LIVE TRANSLATION</span>
+                </div>
+                <div className="p-4 space-y-3">
+                  <p className="text-white text-sm">Good morning, how are you?</p>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs text-gray-400">Translating to</span>
+                    <span className="text-xs font-medium text-primary">ASL</span>
+                  </div>
+                </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
