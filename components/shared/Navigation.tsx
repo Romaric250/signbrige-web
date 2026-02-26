@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -43,9 +44,13 @@ const Navigation: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group flex-shrink-0">
-            <div className="h-9 w-9 rounded-lg bg-primary flex items-center justify-center transition-transform group-hover:scale-105">
-              <span className="text-white font-bold text-sm">SB</span>
-            </div>
+            <Image
+              src={COMPANY.logoUrl}
+              alt={COMPANY.name}
+              width={36}
+              height={36}
+              className="h-9 w-9 rounded-lg object-contain transition-transform group-hover:scale-105"
+            />
             <span className="text-lg font-bold text-gray-900">
               {COMPANY.name}
             </span>

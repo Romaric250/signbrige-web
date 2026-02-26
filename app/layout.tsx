@@ -14,10 +14,19 @@ export const metadata: Metadata = {
   description: 'Sign Bridge is a social-impact technology company focused on eliminating communication barriers between hearing and non-hearing individuals through accessible digital solutions. Powered by SignNova.',
   keywords: ['sign language', 'accessibility', 'Deaf community', 'Ghana', 'assistive technology', 'real-time translation', 'inclusive communication'],
   authors: [{ name: 'Sign Bridge' }],
+  icons: {
+    icon: '/favicon.ico',
+  },
   openGraph: {
     title: 'Sign Bridge — Eliminating Communication Barriers',
     description: 'Social-impact technology for inclusive communication between hearing and non-hearing individuals.',
     type: 'website',
+    images: ['https://g9kbtbs1bu.ufs.sh/f/woziFUfAWTFphaWnBtTgRo0lw2xASz4b17TFjaJQ3DWHeyGs'],
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Sign Bridge — Eliminating Communication Barriers',
+    description: 'Social-impact technology for inclusive communication between hearing and non-hearing individuals.',
   },
 }
 

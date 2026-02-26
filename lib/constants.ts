@@ -8,6 +8,7 @@ export const COMPANY = {
   tagline: 'Eliminating communication barriers between hearing and non-hearing individuals.',
   product: 'SignNova',
   productDescription: 'Real-time sign language translation for inclusive communication.',
+  logoUrl: 'https://g9kbtbs1bu.ufs.sh/f/woziFUfAWTFphaWnBtTgRo0lw2xASz4b17TFjaJQ3DWHeyGs',
 } as const
 
 // Hero background - people image (use /images/hero-bg.jpg for local)
