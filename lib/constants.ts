@@ -1,7 +1,7 @@
 export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api'
 
 // Web app (SignNova) - runs on subdomain e.g. app.signbridge.com
-export const WEB_APP_URL = process.env.NEXT_PUBLIC_WEB_APP_URL || 'https://app.signbridge.com'
+export const WEB_APP_URL = process.env.NEXT_PUBLIC_WEB_APP_URL || 'https://app.signconnect.org/signup'
 
 export const COMPANY = {
   name: 'Sign Bridge',
