@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0">
         <Image
           src={HERO_BACKGROUND_IMAGE}
-          alt=""
+          alt="Diverse group collaborating - Sign Bridge enables inclusive communication"
           fill
           className="object-cover"
           priority

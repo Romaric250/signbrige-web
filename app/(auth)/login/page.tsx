@@ -1,5 +1,11 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import LoginForm from '@/components/auth/LoginForm'
+export const metadata: Metadata = {
+  title: 'Sign In',
+  description: 'Sign in to Sign Bridge and access real-time sign language translation, learning tools, and inclusive communication features.',
+  robots: { index: false, follow: true },
+}
 
 export default function LoginPage() {
   return (

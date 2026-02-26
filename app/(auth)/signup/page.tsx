@@ -1,5 +1,12 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import SignupForm from '@/components/auth/SignupForm'
+
+export const metadata: Metadata = {
+  title: 'Create Account',
+  description: 'Create your Sign Bridge account and start using AI-powered sign language translation, learning tools, and inclusive communication features.',
+  robots: { index: false, follow: true },
+}
 
 export default function SignupPage() {
   return (
